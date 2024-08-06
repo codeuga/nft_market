@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parkcar_app/presentation/pages/discover_page.dart';
 import 'package:parkcar_app/presentation/pages/sign_up_page.dart';
 import 'package:parkcar_app/presentation/widgets/button_widget.dart';
 import 'package:parkcar_app/presentation/widgets/input_widget.dart';
@@ -67,11 +68,19 @@ class SignInPage extends StatelessWidget {
                   isPassword: true,
                 ),
                 Gap(10),
-                ButtonWidget(
-                  text: "Continue",
-                  isFullWidth: true,
-                  onPressed: () {},
-                ),
+                Builder(builder: (context) {
+                  return ButtonWidget(
+                    text: "Sign In",
+                    isFullWidth: true,
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => DiscoverPage(),
+                        ),
+                      );
+                    },
+                  );
+                }),
               ],
             ),
           ),
