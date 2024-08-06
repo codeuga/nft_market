@@ -13,6 +13,7 @@ class DiscoverPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageWidget(
+      bottomNavigationBar: _bottomNavigationBar(),
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -163,6 +164,50 @@ class DiscoverPage extends StatelessWidget {
               itemCount: itemCount),
         )
       ],
+    );
+  }
+
+  Widget _bottomNavigationBar() {
+    var menus = ["Discover", "History", "Wishlist", "Setting"];
+    var active = 0;
+    return Container(
+      padding: EdgeInsets.only(
+        left: 24,
+        right: 24,
+      ),
+      color: Colors.white,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: menus.asMap().entries.map<Widget>(
+          (element) {
+            return TextButton(
+              onPressed: () {},
+              child: SizedBox(
+                height: 60,
+                width: 60,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SvgPicture.asset(
+                        "assets/${element.value.toLowerCase()}.svg"),
+                    Gap(6),
+                    Text(
+                      element.value,
+                      style: GoogleFonts.inter(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                        color: active == element.key
+                            ? ColorConstants.primary
+                            : Color(0xff909FB4),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+        ).toList(),
+      ),
     );
   }
 }

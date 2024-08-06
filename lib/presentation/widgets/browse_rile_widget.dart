@@ -51,6 +51,7 @@ class BrowseRileWidget extends StatelessWidget {
                         color: Color(0xff0D1220),
                       ),
                     ),
+                    Gap(4),
                     Text(
                       browse.itemCount,
                       style: TextStyle(
