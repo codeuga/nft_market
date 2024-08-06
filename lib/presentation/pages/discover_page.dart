@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nft_market/constants/color_constants.dart';
 import 'package:nft_market/presentation/widgets/bid_tile_widget.dart';
+import 'package:nft_market/presentation/widgets/browse_rile_widget.dart';
 import 'package:nft_market/presentation/widgets/page_widget.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -101,14 +102,36 @@ class DiscoverPage extends StatelessWidget {
     );
   }
 
-  Widget _browse() => Padding(
-        padding: EdgeInsets.only(top: 36),
-        child: _listTile(
-          title: "Browse",
-          itemHeight: 196,
-          itemBuilder: (context, index) => Text("$index"),
+  Widget _browse() {
+    var browse = [
+      Browse(
+        image: "assets/browse1.png",
+        title: "Vector",
+        itemCount: "12,049 items",
+      ),
+      Browse(
+        image: "assets/browse2.png",
+        title: "3D",
+        itemCount: "589 items",
+      ),
+      Browse(
+        image: "assets/browse3.png",
+        title: "Vector",
+        itemCount: "12,049 items",
+      ),
+    ];
+    return Padding(
+      padding: EdgeInsets.only(top: 36),
+      child: _listTile(
+        title: "Browse",
+        itemHeight: 196,
+        itemCount: browse.length,
+        itemBuilder: (context, index) => BrowseRileWidget(
+          browse: browse[index],
         ),
-      );
+      ),
+    );
+  }
 
   Column _listTile(
       {required String title,

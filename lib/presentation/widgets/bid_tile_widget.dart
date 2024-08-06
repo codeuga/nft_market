@@ -54,6 +54,7 @@ class BidTileWidget extends StatelessWidget {
                         color: Color(0xff0D1220),
                       ),
                     ),
+                    Gap(8),
                     RichText(
                       text: TextSpan(
                         children: [
