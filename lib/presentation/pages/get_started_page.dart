@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:parkcar_app/presentation/pages/sign_up_page.dart';
-import 'package:parkcar_app/presentation/widgets/button_widget.dart';
-import 'package:parkcar_app/presentation/widgets/page_widget.dart';
+import 'package:nft_market/presentation/pages/sign_in_page.dart';
+import 'package:nft_market/presentation/widgets/button_widget.dart';
+import 'package:nft_market/presentation/widgets/page_widget.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -42,7 +42,7 @@ class GetStartedPage extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                    builder: (context) => SignUpPage(),
+                    builder: (context) => SignInPage(),
                   ),
                 );
               },

@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "parkcar_app" "\0"
+            VALUE "FileDescription", "nft_market" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "parkcar_app" "\0"
+            VALUE "InternalName", "nft_market" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "parkcar_app.exe" "\0"
-            VALUE "ProductName", "parkcar_app" "\0"
+            VALUE "OriginalFilename", "nft_market.exe" "\0"
+            VALUE "ProductName", "nft_market" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

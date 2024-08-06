@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:parkcar_app/presentation/pages/get_started_page.dart';
+import 'package:nft_market/presentation/pages/get_started_page.dart';
 
 void main() {
   runApp(const MyApp());

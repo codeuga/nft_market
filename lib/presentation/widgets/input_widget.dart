@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gap/gap.dart';
-import 'package:parkcar_app/constants/color_constants.dart';
+import 'package:nft_market/constants/color_constants.dart';
 
 class InputWidget extends StatelessWidget {
   final String lable;

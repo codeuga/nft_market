@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:parkcar_app/constants/color_constants.dart';
-import 'package:parkcar_app/presentation/widgets/page_widget.dart';
+import 'package:nft_market/constants/color_constants.dart';
+import 'package:nft_market/presentation/widgets/bid_tile_widget.dart';
+import 'package:nft_market/presentation/widgets/page_widget.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -13,7 +14,11 @@ class DiscoverPage extends StatelessWidget {
     return PageWidget(
       child: SingleChildScrollView(
         child: Column(
-          children: [_userInfo()],
+          children: [
+            _userInfo(),
+            _popularsBids(),
+            _browse(),
+          ],
         ),
       ),
     );
@@ -71,4 +76,70 @@ class DiscoverPage extends StatelessWidget {
           ],
         ),
       );
+
+  Widget _popularsBids() {
+    var bids = [
+      Bid(
+          image: "assets/image2.png",
+          title: "The Masa",
+          ends: "35m 11s",
+          price: "12.4"),
+      Bid(
+          image: "assets/image1.png",
+          title: "Centre",
+          ends: "35m 11s",
+          price: "12.4"),
+    ];
+    return Padding(
+      padding: EdgeInsets.only(top: 36),
+      child: _listTile(
+        title: "Popular Bids",
+        itemHeight: 268,
+        itemCount: bids.length,
+        itemBuilder: (context, index) => BidTileWidget(bid: bids[index]),
+      ),
+    );
+  }
+
+  Widget _browse() => Padding(
+        padding: EdgeInsets.only(top: 36),
+        child: _listTile(
+          title: "Browse",
+          itemHeight: 196,
+          itemBuilder: (context, index) => Text("$index"),
+        ),
+      );
+
+  Column _listTile(
+      {required String title,
+      required double itemHeight,
+      required NullableIndexedWidgetBuilder itemBuilder,
+      int itemCount = 5}) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Text(
+            title,
+            style: GoogleFonts.inter(
+              fontWeight: FontWeight.w600,
+              fontSize: 18,
+              color: Color(0xff0D1220),
+            ),
+          ),
+        ),
+        Gap(16),
+        SizedBox(
+          height: itemHeight,
+          child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.symmetric(horizontal: 24),
+              itemBuilder: itemBuilder,
+              separatorBuilder: (context, index) => Gap(24),
+              itemCount: itemCount),
+        )
+      ],
+    );
+  }
 }

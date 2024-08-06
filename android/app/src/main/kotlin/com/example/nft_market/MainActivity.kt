@@ -1,4 +1,4 @@
-package com.example.parkcar_app
+package com.example.nft_market
 
 import io.flutter.embedding.android.FlutterActivity
 

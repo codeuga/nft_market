@@ -1,6 +1,6 @@
 {
-    "name": "parkcar_app",
-    "short_name": "parkcar_app",
+    "name": "nft_market",
+    "short_name": "nft_market",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
